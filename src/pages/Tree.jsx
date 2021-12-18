@@ -17,6 +17,13 @@ const TreeBlock = styled.ul`
     text-align:center;
 `;
 
+const TreeBottom = styled.div`
+    width: 70px;
+    height: 100px;
+    background-color: #4e341d;
+    margin: 0 auto;
+`;
+
 const Tree = ({number}) => {
     const layer = number.number / 1;
     const renderTree = (layer) =>{
@@ -31,6 +38,7 @@ const Tree = ({number}) => {
             <TreeBlock>
                 <Image img={'star'} />
                 {renderTree(layer)}
+                <TreeBottom />
             </TreeBlock>
         </TreePage>
     );

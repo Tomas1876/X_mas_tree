@@ -13,10 +13,12 @@ const StyledInput = styled.input`
     font-size: 32px;
     text-align: center;
     letter-spacing: 20px;
+  
     :focus {
         border: 3px solid #aa1c20;
     }
 `;
+
 const StyledButton = styled.button`
     width: 100px;
     height: 50px;
@@ -38,12 +40,13 @@ const Form =({changeNumber})=> {
     const numberInput = useRef();
     const submitButton = useRef();
     //submitButton.current.disabled = true;
+    const [number, setNumber] = useState();
 
     const onChange =(e)=> {
       
-        const value = e.target.value;
-        
-        if(value <= 0){
+        const _value = e.target.value;
+        setNumber(_value);
+        if(_value <= 0){
             submitButton.current.disabled = true;
             return;
         }
@@ -51,12 +54,18 @@ const Form =({changeNumber})=> {
         submitButton.current.disabled = false;
     }
     const onClick =()=>{
+        
+        if(isNaN(number)){
+            alert('숫자를 입력해주세요!');
+            setNumber('');
+            return;
+        }
         changeNumber(numberInput.current.value);
     }
     
     return (
         <>
-            <StyledInput type="number" onChange={onChange} ref={numberInput}/>
+            <StyledInput type="text" onChange={onChange} ref={numberInput} value={number}/>
             <StyledButton onClick={onClick} ref={submitButton}>확인</StyledButton>  
         </>
     );
