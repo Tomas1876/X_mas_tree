@@ -60,6 +60,11 @@ const Form =({changeNumber})=> {
             setNumber('');
             return;
         }
+        if(number > 20){
+            alert('저런...스크린이 품지 못하는 거대한 나무네요');
+            setNumber('');
+            return;
+        }
         changeNumber(numberInput.current.value);
     }
     

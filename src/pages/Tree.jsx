@@ -8,7 +8,7 @@ const TreePage = styled.div`
   height:100%;
   text-align:center;
   color: #fff;
-  padding-top: 100px;
+  padding-top: 50px;
   margin-top: 100px;
 `;
 
@@ -18,7 +18,7 @@ const TreeBlock = styled.ul`
 `;
 
 const TreeBottom = styled.div`
-    width: 70px;
+    width: 50px;
     height: 100px;
     background-color: #4e341d;
     margin: 0 auto;
@@ -29,7 +29,7 @@ const Tree = ({number}) => {
     const renderTree = (layer) =>{
         const li = [];
          for(let i = 1; i <= layer; i++){
-            li.push(<TreeRow column={i} key={i}/>);
+            li.push(<TreeRow column={i} key={i} isLast={i === layer}/>);
         }
         return li;
     }

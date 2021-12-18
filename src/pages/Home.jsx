@@ -8,7 +8,7 @@ const HomeContainer = styled.div`
   height:100%;
   text-align:center;
   color: #fff;
-  padding-top: 100px;
+  padding-top: 200px;
   margin-top: 100px;
 `;
 
