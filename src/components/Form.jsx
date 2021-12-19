@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import styled from 'styled-components';
 
 const StyledInput = styled.input`
@@ -27,6 +27,7 @@ const StyledButton = styled.button`
     outline: none;
     border: none;
     color: #fff;
+    font-size: 16px;
     text-align: center;
     display: block;
     margin: 20px auto;

@@ -12,7 +12,7 @@ const HomeContainer = styled.div`
   margin-top: 100px;
 `;
 
-const Home = ({changeNumber}) => {
+const HomePage = ({changeNumber}) => {
     return (
         <HomeContainer>
             <Img img={'star'} big />
@@ -22,4 +22,4 @@ const Home = ({changeNumber}) => {
     );
 }
 
-export default Home;
+export default HomePage;

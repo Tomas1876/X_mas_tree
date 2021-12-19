@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Image from "../components/Image";
 import TreeRow from "../components/TreeRow";
 
-const TreePage = styled.div`
+const TreeContainer = styled.div`
   width:100%;
   height:100%;
   text-align:center;
@@ -15,6 +15,7 @@ const TreePage = styled.div`
 const TreeBlock = styled.ul`
     width: 100%;
     text-align:center;
+    padding: 0;
 `;
 
 const TreeBottom = styled.div`
@@ -23,8 +24,21 @@ const TreeBottom = styled.div`
     background-color: #4e341d;
     margin: 0 auto;
 `;
+const StyledButton = styled.button`
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #aa1c20;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    margin: 50px auto;
 
-const Tree = ({number}) => {
+`;
+const TreePage = ({number, onClick}) => {
     const layer = number.number / 1;
     const renderTree = (layer) =>{
         const li = [];
@@ -33,15 +47,19 @@ const Tree = ({number}) => {
         }
         return li;
     }
+
     return (
-        <TreePage>
+        <>
+        <TreeContainer>
             <TreeBlock>
                 <Image img={'star'} />
                 {renderTree(layer)}
                 <TreeBottom />
             </TreeBlock>
-        </TreePage>
+        </TreeContainer>
+        <StyledButton onClick={onClick}>홈으로</StyledButton>
+        </>
     );
 }
 
-export default Tree;
+export default TreePage;

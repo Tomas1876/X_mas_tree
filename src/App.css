@@ -1,4 +1,6 @@
 body {
+  margin: 0;
+  padding: 0;
   background-color: #130402;
 }
 div,
@@ -6,4 +8,8 @@ button,
 a,
 p {
   box-sizing: border-box;
+}
+
+.App {
+  width: 100%;
 }

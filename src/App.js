@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './App.css';
 import Header from './components/Header';
-import Home from './pages/Home';
-import Tree from './pages/Tree';
+import HomePage from './pages/HomePage';
+import TreePage from './pages/TreePage';
 
 function App() {
   const [number, setNumber] = useState();
@@ -11,16 +11,25 @@ function App() {
     setNumber({
       number: number
     });
-    setMode('tree');
+    setMode('TREE');
   }
+  const removeRow = () => {
+    setNumber({
+      number: number--
+    })
+  }
+  const backHome = () => {
+    setMode('HOME');
+  }
+
   console.log(number);
   console.log(mode);
   return (
-    <div className="App">
+    <>
       <Header />
-      {mode == 'tree' ? (<Tree number={number} />) :
-        (<Home changeNumber={changeNumber} />)}
-    </div>
+      {mode == 'TREE' ? (<TreePage number={number} onClick={backHome} />) :
+        (<HomePage changeNumber={changeNumber} />)}
+    </>
   );
 }
 
